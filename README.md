@@ -3,7 +3,7 @@
 GRPC ACL microservice in node. Built on top of [condor-framework](https://github.com/devsu/condor-framework) and [acl](https://github.com/OptimalBits/node_acl).
 
 [![Build Status](https://travis-ci.org/devsu/grpc-acl.svg?branch=master)](https://travis-ci.org/devsu/grpc-acl)
-[![Coverage Status](https://coveralls.io/repos/github/devsu/grpc-acl/badge.svg?branch=master)](https://coveralls.io/github/devsu/grpc-acl?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/devsu/grpc-acl/badge.svg)](https://coveralls.io/github/devsu/grpc-acl)
 
 ## Installation
 
