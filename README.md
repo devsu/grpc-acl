@@ -15,8 +15,8 @@ npm i --save acl
 
 ## Usage
 
-- Copy the `acl.proto` file.
-- Initialize your server
+- Copy the [acl.proto](https://github.com/devsu/grpc-acl/blob/master/acl.proto) file.
+- Create your server with the following code:
 
 ```js
 const acl = require('acl');
@@ -46,6 +46,8 @@ client.addUserRoles({'user': 'joed', 'roles': ['guest']}).then(() => {
 ```
 
 To find which methods are implemented take a look at the `acl.proto` file. They are pretty similar to the ones found in the documentation of the [acl](https://github.com/OptimalBits/node_acl) module.
+
+You can take the [integration test](https://github.com/devsu/grpc-acl/blob/master/index.integration.spec.js) as an example too.
 
 ## Arguments
 
