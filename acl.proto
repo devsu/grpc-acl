@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package acl;
+
+service AclService {
+  rpc AddUserRoles(UserRoles) returns (Empty) {};
+  rpc RemoveUserRoles(UserRoles) returns (Empty) {};
+  rpc GetUserRoles(User) returns (Roles) {}; // userRoles
+  rpc GetRoleUsers(Role) returns (Users) {}; // roleUsers
+  rpc HasRole(UserRole) returns (AccessResponse) {};
+  rpc AddRoleParents(RoleParents) returns (Empty) {};
+  rpc RemoveRoleParents(RoleParents) returns (Empty) {};
+  rpc RemoveRole(Role) returns (Empty) {};
+  rpc RemoveResource(Resource) returns (Empty) {};
+  rpc Allow(AllowRequest) returns (Empty) {};
+  rpc AllowMultiple(AllowMultipleRequest) returns (Empty) {};
+  rpc RemoveAllow(RemoveAllowRequest) returns (Empty) {};
+  rpc GetPermissions(UserResources) returns (ResourcesPermissions) {}; // allowedPermissions
+  rpc IsAllowed(UserResourcePermissions) returns (AccessResponse) {};
+  rpc AreAnyRolesAllowed(RoleResourcePermissions) returns (AccessResponse) {};
+  rpc GetRolePermissions(Role) returns (ResourcesPermissions) {}; // whatResources
+  rpc GetRolesPermissions(Roles) returns (ResourcesPermissions) {}; // whatResources
+  rpc GetResources(RolePermissions) returns (Resources) {}; // whatResources
+}
+
+message Empty {}
+
+message User {
+  string user = 1;
+}
+
+message Users {
+  repeated string users = 1;
+}
+
+message Role {
+  string role = 1;
+}
+
+message Roles {
+  repeated string roles = 1;
+}
+
+message Resource {
+  string resource = 1;
+}
+
+message Resources {
+  repeated string resources = 1;
+}
+
+message UserRole {
+  string user = 1;
+  string role = 2;
+}
+
+message UserRoles {
+  string user = 1;
+  repeated string roles = 2;
+}
+
+message UserResources {
+  string user = 1;
+  repeated string resources = 2;
+}
+
+message UserPermission {
+  string user = 1;
+  string resource = 3;
+  string permission = 4;
+}
+
+message RoleParents {
+  string role = 1;
+  repeated string parents = 2;
+}
+
+message AllowRequest {
+  repeated string roles = 1;
+  repeated string resources = 2;
+  repeated string permissions = 3;
+}
+
+message AllowMultipleRequest {
+  repeated AllowRequest data = 1;
+}
+
+message RemoveAllowRequest {
+  string role = 1;
+  repeated string resources = 2;
+  repeated string permissions = 3;
+}
+
+message ResourcesPermissions {
+  repeated ResourcePermissions data = 1;
+}
+
+message ResourcePermissions {
+  string resource = 1;
+  repeated string permissions = 2;
+}
+
+message AccessResponse {
+  bool result = 1;
+}
+
+message UserResourcePermissions {
+  string user = 1;
+  string resource = 2;
+  repeated string permissions = 3;
+}
+
+message RoleResourcePermissions {
+  string role = 1;
+  string resource = 2;
+  repeated string permissions = 3;
+}
+
+message RolePermissions {
+  string role = 1;
+  repeated string permissions = 2;
+}
+
+message IsAllowedRequest {
+  string user = 1;
+  string resource = 2;
+  repeated string permissions = 3;
+  repeated string roles = 4;
+}
