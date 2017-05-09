@@ -39,7 +39,7 @@ To call the service:
 
 ```js
 const caller = require('grpc-caller');
-const client = caller('localhost:3000', './acl.proto', 'com.devsu.acl.AclService');
+const client = caller('localhost:3000', './acl.proto', 'AclService');
 client.addUserRoles({'user': 'joed', 'roles': ['guest']}).then(() => {
   console.log('done!');
 });
@@ -61,7 +61,7 @@ You can pass any [condor options](http://condorjs.com/options), and also the fol
 | Option                     | Description                                                                    | Default                     |
 |----------------------------|--------------------------------------------------------------------------------|-----------------------------|
 | aclProtoFilePath           | Path to the `acl.proto` file                                                   | `./acl.proto`               |
-| aclServiceFullName         | Service full name of the AclService (must match to the one in the proto file)  | `com.devsu.acl.AclService`  |
+| aclServiceFullName         | Service full name of the AclService (must match to the one in the proto file)  | `acl.AclService`            |
 
 ## License and Credits
 
