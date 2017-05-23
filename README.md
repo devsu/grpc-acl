@@ -58,10 +58,10 @@ You can take the [integration test](https://github.com/devsu/grpc-acl/blob/maste
 
 You can pass any [condor options](http://condorjs.com/options), and also the following:
 
-| Option                     | Description                                                                    | Default                     |
-|----------------------------|--------------------------------------------------------------------------------|-----------------------------|
-| aclProtoFilePath           | Path to the `acl.proto` file                                                   | `./acl.proto`               |
-| aclServiceFullName         | Service full name of the AclService (must match to the one in the proto file)  | `acl.AclService`            |
+| Option                 | Description                                                                | Default                 |
+|------------------------|----------------------------------------------------------------------------|-------------------------|
+| aclProtoFilePath       | Path to the `acl.proto` file                                               | `./acl.proto`           |
+| aclServiceName         | Service name of the AclService (must match to the one in the proto file)   | `AclService`            |
 
 ## License and Credits
 

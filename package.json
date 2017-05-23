@@ -1,6 +1,6 @@
 {
   "name": "grpc-acl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GRPC ACL microservice",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/devsu/grpc-acl#readme",
   "devDependencies": {
     "acl": "^0.4.10",
-    "condor-framework": "^1.2.1",
+    "condor-framework": "^1.4.0",
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-devsu-node": "0.0.3",
@@ -41,7 +41,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "condor-framework": ">= 1.2.0 < 2",
+    "condor-framework": ">= 1.4.0 < 2",
     "acl": ">= 0.4.10 < 1"
   }
 }
