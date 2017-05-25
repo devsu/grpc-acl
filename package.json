@@ -1,6 +1,6 @@
 {
   "name": "grpc-acl",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "GRPC ACL microservice",
   "main": "index.js",
   "scripts": {
