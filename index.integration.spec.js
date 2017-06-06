@@ -8,14 +8,14 @@ describe('AclServer', () => {
   beforeAll(() => {
     // eslint-disable-next-line new-cap
     server = new AclServer(new acl.memoryBackend()).start();
-    client = caller('localhost:3000', './acl.proto', 'AclService');
+    client = caller('localhost:50051', './acl.proto', 'AclService');
   });
 
   afterAll((done) => {
     server.stop().then(done).catch(done.fail);
   });
 
-  it('smoke test', (done) => {
+  it('should pass the smoke test', (done) => {
     Promise.resolve().then(() => {
       return client.allow({
         'roles': ['guest'],
